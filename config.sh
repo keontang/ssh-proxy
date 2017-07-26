@@ -19,7 +19,7 @@ SSH_DEBUG_OPTS=""
 # SSH OPTIONS TO CREATE PROXY
 SSH_OPTS="-C2TnNfD"
 # user@host
-SSH_HOST="gw@foreign.vpn.caicloud.io"
+SSH_HOST="username@serverip"
 # SSH PORT
 SSH_PORT=22
 # OSX network service to configure proxy for

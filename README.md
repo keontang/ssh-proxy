@@ -46,7 +46,7 @@ PORT=1090
 
 ```
 # user@host
-SSH_HOST="gw@foreign.vpn.caicloud.io"
+SSH_HOST="username@serverip"
 # SSH PORT
 SSH_PORT=22
 ```
