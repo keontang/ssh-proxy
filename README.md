@@ -100,4 +100,9 @@ bash ./system_proxy_configure.sh [on|off|status]
 
 # Notes
 
-`ssh_proxy.sh` 和 `system_proxy_configure.sh` 没有严格的先后执行顺序, 前者负责代理程序的管理, 而后者负责系统网络代理的配置.
+- `ssh_proxy.sh` 和 `system_proxy_configure.sh` 没有严格的先后执行顺序, 前者负责代理程序的管理, 而后者负责系统网络代理的配置.
+- 另外，公司或者客户内部我们通常无法使用微信、QQ 等应用，我们可以通过 `Proxifier` 软件解决.
+
+![Proxifier](resource/proxifier.png)
+
+
