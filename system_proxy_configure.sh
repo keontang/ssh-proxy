@@ -33,8 +33,7 @@ function enableProxy {
     current_bypass=$(networksetup -getproxybypassdomains ${NET_INTERFACE})
     # Change '\n' to ' '
     current_bypass=$(echo ${current_bypass})
-    echo "${current_bypass}"
-    echo "${BYPASS_DOMAINS}"
+
     if [ "${current_bypass}" != "${BYPASS_DOMAINS}" ]; then
         echo Setproxybypassdomains: ${BYPASS_DOMAINS}, for interface: ${NET_INTERFACE}
         networksetup  -setproxybypassdomains ${NET_INTERFACE} ${BYPASS_DOMAINS}
