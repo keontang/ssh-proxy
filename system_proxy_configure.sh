@@ -18,7 +18,6 @@ function report {
  
 function enableProxy {
     current_url=$(networksetup -getautoproxyurl ${NET_INTERFACE} | grep URL | awk '{print $2}')
-    echo ${current_url}
     if [ "${current_url}" != ${PAC_FILE}  ]; then
         echo Setautoproxyurl: ${PAC_FILE}, for interface: ${NET_INTERFACE}
         networksetup  -setautoproxyurl ${NET_INTERFACE} ${PAC_FILE}
@@ -75,12 +74,12 @@ function disableProxy {
 }
  
 function showStatus {
-    #networksetup -getsocksfirewallproxy ${NET_INTERFACE} | grep Enabled | grep Yes > /dev/null
-    #if [ $? -eq 0 ]; then
-    #    echo Socksfirewallproxy for ${NET_INTERFACE}: ON
-    #else
-    #    echo Socksfirewallproxy for ${NET_INTERFACE}: OFF
-    #fi
+    networksetup -getsocksfirewallproxy ${NET_INTERFACE} | grep Enabled | grep Yes > /dev/null
+    if [ $? -eq 0 ]; then
+        echo Socksfirewallproxy for ${NET_INTERFACE}: ON
+    else
+        echo Socksfirewallproxy for ${NET_INTERFACE}: OFF
+    fi
 
     networksetup -getautoproxyurl ${NET_INTERFACE} | grep Enabled | grep Yes > /dev/null
     if [ $? -eq 0 ]; then
