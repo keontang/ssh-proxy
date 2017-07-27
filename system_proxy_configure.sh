@@ -5,6 +5,10 @@
 ## tested on MacOSX Lion 10.6
 ##
 
+set -o errexit
+set -o nounset
+set -o pipefail
+
 ROOT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
  
 source ${ROOT_DIR}/config.sh
