@@ -21,6 +21,9 @@ function report {
 function enableProxy {
     ${SSH_CMD} ${SSH_DEBUG_OPTS} 2> ${LOG_FILE}
     showStatus
+    if [ $? != 0 ]; then
+        echo Please check ${LOG_FILE} for more detailed information
+    fi
 }
  
 function disableProxy {
@@ -33,8 +36,10 @@ function showStatus {
     ps -ax | grep "${SSH_CMD}" | grep -v grep > /dev/null
     if [ $? -eq 0 ]; then
         echo SSH SOCKS Proxy: ON
+        return 0
     else
         echo SSH SOCKS Proxy: OFF
+        return 1
     fi
 }
  
@@ -51,6 +56,7 @@ case "$1" in
     status) echo status
         showStatus
         ;;
+
     *) echo Options: 
        echo "    on        enable proxy"
        echo "    off       disable proxy"
