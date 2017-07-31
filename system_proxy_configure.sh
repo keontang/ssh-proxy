@@ -92,8 +92,9 @@ function showStatus {
         echo Autoproxy for ${NET_INTERFACE}: OFF
     fi
 }
- 
-case "$1" in
+
+opt=${1:-""}
+case "${opt}" in
  
     on) report "Enabling Proxy"
         enableProxy
