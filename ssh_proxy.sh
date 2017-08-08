@@ -1,8 +1,6 @@
 #!/bin/bash
-## (C) George Goulas, 2011
-##
 ## Proxy service configuration script for OSX
-## tested on MacOSX Lion 10.6
+## tested on MacOS Sierra
 ##
 
 ROOT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
